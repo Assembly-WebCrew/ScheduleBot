@@ -17,29 +17,23 @@ Twitter.prototype.init = function (cb) {
   self.templ = hogan.compile(fs.readFileSync(__dirname + '/tweet.template', 'utf8'));
   self.twit = new twitter(config.api);
   // Check credentials and initialize Twitter interactions
-  console.log('Logging in to Twitter, and fetching settings...');
-  self.twit
-  .verifyCredentials(function (err, data) {
+  //console.log('Logging in to Twitter, and fetching settings...');
+  self.twit.verifyCredentials(function (err, data) {
     if (err) { cb(err); return; }
-    else { // Update sent tweets
-      /*console.log('Updating sent tweets...');
-      self.updateTweets(function (e) {
-        if (e) { console.error(e); process.exit(0); }
-        else   { self.ready = true; }
-      });*/
-    }
-  })
-  .get('/help/configuration.json', function (err, data) {
-    if (!err) {
-      config.short_url_length = parseInt(data.short_url_length_https, 10);
-    } else {
-      console.error(err);
-      console.error('Failed to get Twitter help!');
+    else { // Read help/configuration
+      self.twit.get('/help/configuration.json', function (err, data) {
+        if (err) { cb(err); }
+        else { // Save short url length
+          config.short_url_length = parseInt(data.short_url_length_https, 10);
+          self.ready = true;
+          cb(null);
+        }
+      });
     }
   });
 };
 
-Twitter.prototype.updateTweets = function (cb) {
+/*Twitter.prototype.updateTweets = function (cb) {
   var self = this;
   self.twit.getUserTimeline(
     { trim_user: false
@@ -56,7 +50,7 @@ Twitter.prototype.updateTweets = function (cb) {
         console.dir(self.tweets);
       }
   });
-}
+}*/
 
 Twitter.prototype.format = function (o) {
   var len = config.template_length  // "Empty" template length
@@ -69,7 +63,7 @@ Twitter.prototype.format = function (o) {
 
   // If we exceed the maximum length
   if (o.text.length + len > 140) {
-    // oops
+    console.error('TWEET: Will be too long!'); // FIXME
   }
 
   return this.templ.render(o);

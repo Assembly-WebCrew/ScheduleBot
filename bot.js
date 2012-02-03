@@ -1,11 +1,12 @@
 'use strict';
 
 var http = require('http')
-  , fs = require('fs')
+  , path = require('path')
+  , fs   = require('fs')
   , config = require('./config')
-  , _ = require('underscore')
-  , async = require('async')
-  , path = require('path');
+  , async  = require('async')
+  , _ = require('underscore');
+// Load string functions
 _.str = require('underscore.string');
 _.mixin(_.str.exports());
 
@@ -15,22 +16,22 @@ function ScheduleDigestor(conf) {
   self.calData = [];
   self.outputs = {};
 
-  self.init();
+  self.init(function initialized(e) {
+    if (e) { console.error(e.stack); }
+    else { console.log('Initialize successful!'); }
+  });
 }
 
-ScheduleDigestor.prototype.init = function () {
-  // Load output modules
+ScheduleDigestor.prototype.init = function (cb) {
+  // Load output modules synchronously
   var self = this
     , files = fs.readdirSync(__dirname + '/out')
     , outputs = files
-    // Filter files
+    // Filter files: ./out/module/module.js
     .filter(function (fn) { return path.existsSync(__dirname + '/out/' + fn + '/' + fn + '.js'); })
     .map(function loadModules(out) {
-      try {
-        console.log(__dirname + '/out/' + out + '/' + out);
+      try { // Try to require module
         self.outputs[out.toLowerCase()] = new (require(__dirname + '/out/' + out + '/' + out))(self);
-        console.log('Loading module %s...', out);
-        self.outputs[out.toLowerCase()].init();
         return out;
       } catch (e) {
         console.error('Failed to load module "%s".', out);
@@ -38,27 +39,51 @@ ScheduleDigestor.prototype.init = function () {
         return out;
       }
     });
-  console.log('Loaded %s output module(s): %s', String(outputs.length), outputs.join(', '));
-
-  // Update calendar data
-  console.log('Updating calendar data...');
+  console.log('Found %s output module(s): %s', String(outputs.length), outputs.join(', '));
+  
+  // Initializes a module by it's name, returns true/false
+  function moduleInit(module, cb) {
+    process.stdout.write('Initializing ' + module + ' module...');
+    self.outputs[module].init(function (e) {
+      console.log(' -> ' + !e ? ' ok' : ' fail');
+      cb(!e);
+    });
+  }
+  
+  async.parallel([
+    // Update calendar data
+    function updateCalendarData(cb) {
+      console.log('Updating calendar data...');
+      self.updateCalendar(cb);
+    },
+    // Initialize output modules
+    function initializeModules(cb) {
+      console.log('Initializing output modules...');
+      async.filter(Object.keys(self.outputs), moduleInit, function (result) {
+        self.outputs = result;
+        cb(null);
+      });
+    }
+    // init done!
+  ], cb);
+  /*
   self.updateCalendar(function (e) {
     if (e) {
       console.error(e); console.warning('Failed to update calendar data!');
     } else {
       self.startBroadCast();
-      /*var rand = Math.floor(Math.random() * self.calData.length);
+      var rand = Math.floor(Math.random() * self.calData.length);
       console.dir(self.calData[rand]);
       self.calData.forEach(function (e) {
         console.log(self.outputs.twitter.format(e));
         console.log(self.outputs.twitter.format(e).length);
-      });*/
+      });
     }
-  });
+  });*/
 };
 
 ScheduleDigestor.prototype.startBroadCast = function () {
-  
+  console.log(this.outputs);
 };
 
 /**
