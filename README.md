@@ -1,9 +1,9 @@
 Schedulebot for Assembly Organizing
 ===================================
 
-Pushes updates from schedules to Twitter (or any output module) with Node. Digests vCalendar formatted in JSON.
-For example: [Assembly Summer 2011 all](http://ical2json.pb.io/www.assembly.org/summer11/program/schedule/assembly-summer-2011-all.ics)
-
+Pushes updates from schedules to Twitter (or any output module) with Node. At the momemt it digests
+iCalendar files formatted in JSON. (Example:
+[Assembly Summer 2011](http://ical2json.pb.io/www.assembly.org/summer11/program/schedule/assembly-summer-2011-all.ics))
 
 Stuff to think about
 --------------------
