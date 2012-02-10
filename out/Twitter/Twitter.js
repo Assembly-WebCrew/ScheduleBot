@@ -69,5 +69,19 @@ Twitter.prototype.format = function (o) {
   return this.templ.render(o);
 };
 
+/*
+.updateStatus('Test tweet!', function (err, data) {
+  console.log('e: ' + err);
+  console.log(console.dir(data));
+});*/
+
+// Some utils
+function DateToTime(d) {
+  return [d.getHours(), _.pad(d.getMinutes(), 2, '0')].join(':');
+}
+
+function DateToString(d) {
+  return [d.getDate(), d.getMonth() + 1, d.getFullYear()].join('.');
+}
 
 module.exports = Twitter;

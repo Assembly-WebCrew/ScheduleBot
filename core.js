@@ -6,29 +6,24 @@ var http = require('http')
   , config = require('./config')
   , parser = require('./parser')
   , async  = require('async')
-  , ical   = require('ical')
-  , colors = require('colors')
-  , _ = require('underscore');
-// Load string helper functions
-_.str = require('underscore.string');
-_.mixin(_.str.exports());
+  , colors = require('colors');
 
-function ScheduleDigestor(conf) {
+
+function ScheduleDigestor() {
   var self = this;
-  self.configure = conf;
-  self.calData = [];
+  self.configure = config;
   self.outputs = {};
 
   self.init(function initialized(e, data) {
     if (e) { console.error(e.stack); }
-    else {
-      console.dir(data[1]);
-    }
+    else   { self.startBroadCast();  }
   });
 }
 
+/**
+ * Digest data and fire up output modules
+ **/
 ScheduleDigestor.prototype.init = function (cb) {
-  console.time('Initializing completed');
   // Load output modules synchronously
   var self = this
     , outputs = fs.readdirSync(__dirname + '/out')
@@ -54,46 +49,37 @@ ScheduleDigestor.prototype.init = function (cb) {
       cb(!e);
     });
   }
-
+  
+  // Initialize output modules
+  function initializeModules(cb) {
+    var keys = Object.keys(self.outputs);
+    async.filter(keys, moduleInit, function (results) {
+      // Check the results
+      for (var i = keys.length; i--;) {
+        if (results.indexOf(keys[i]) === -1){
+          // It was filtered, thus init failed.
+          delete self.outputs[keys[i]];
+        }
+      }
+      //self.outputs = result;
+      cb(null);
+    });
+  }
+  
+  // Time to use these functions above
   console.log('Parsing calendar data and initializing output modules...');
-  async.parallel([
-    // Update calendar data
-    function updateCalendarData(cb) {
-      parser(cb);
-    },
-    // Initialize output modules
-    function initializeModules(cb) {
-      async.filter(Object.keys(self.outputs), moduleInit, function (result) {
-        self.outputs = result;
-        cb(null);
-      });
-    }
-    // init done!
-  ], function (e, d) {
-    console.timeEnd('Initializing completed');
-    cb(e, d[0]);
+  async.parallel([parser, initializeModules],
+  // Init done!
+  function (e, d) {
+    cb(e, d[0]); // 0 is the calendar data from parser
   });
 };
 
+
 ScheduleDigestor.prototype.startBroadCast = function () {
-  console.log(this.outputs);
+  console.log('Starting to broadcast.');
 };
 
-// Some utils
-function DateToTime(d) {
-  return [d.getHours(), _.pad(d.getMinutes(), 2, '0')].join(':');
-}
-
-function DateToString(d) {
-  return [d.getDate(), d.getMonth() + 1, d.getFullYear()].join('.');
-}
 
 // Create a new bot
-var bot = new ScheduleDigestor(config);
-
-
-  /*
-  .updateStatus('Test tweet!', function (err, data) {
-    console.log('e: ' + err);
-    console.log(console.dir(data));
-  });*/
+var bot = new ScheduleDigestor();
