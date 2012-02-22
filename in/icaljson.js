@@ -1,5 +1,4 @@
-var config = require('./config')
-  , fs = require('fs')
+var fs = require('fs')
   , _ = require('underscore');
 // Load string helper functions
 _.str = require('underscore.string');
@@ -20,11 +19,11 @@ _.mixin(_.str.exports());
  */
 
 /* Once parsing is done, export the data like this:
-module.export = function (cb) { cb (data); };
+module.export = function (config, cb) { cb(data); };
 */
 
 // Here's an example for iCalendar data converted to json:
-function parseJSON(cb) {
+function parseJSON(config, cb) {
 
   function parseDate(d) {
     //typical RFC date-time format
@@ -48,12 +47,12 @@ function parseJSON(cb) {
           comps[5],
           comps[6]
         );
-      }    
+      }
     } else {
       cb(new Error('Failed to parse Date: ' + d));
     }
   }
-  
+
   function parseCalData(e) {
     return {
         "sdate": parseDate(e.DTSTART)
@@ -67,7 +66,7 @@ function parseJSON(cb) {
 
   // Parse JSON
   try {
-    var rawData = JSON.parse(fs.readFileSync(config.input, 'utf8'));
+    var rawData = JSON.parse(fs.readFileSync(config.file, 'utf8'));
   } catch (e) {
     console.error('Failed to parse JSONified vCalendar data!');
     cb(e); return;

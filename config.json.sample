@@ -1,4 +1,17 @@
 {
   "headstart": 300000,
-  "input": "example.json"
+  "input": {
+    "parser": "icaljson",
+    "config": {
+      "file": "data/example.json"
+    }
+  },
+  "webui": {
+    "secret": "this is a session secret",
+    "base": "http://example.com/botpanel",
+    "port": 1337,
+    "users": [
+      {"id": 1, "username": "admin", "password": "hihho", "status": "0"}
+    ]
+  }
 }

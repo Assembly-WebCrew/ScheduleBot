@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ScheduleBot Control Panel</title>
+</head>
+<body>
+{{^authenticated}}
+  <h1>You need to log in.</h1>
+  <form method="post" action="./login">
+    <label>User: <input type="text"     size="10" maxlength="40" name="username" /></label><br />
+    <label>Pass: <input type="password" size="10" name="password" /></label>
+    <input type="submit" value="Login" />
+  </form>
+{{/authenticated}}
+{{#authenticated}}
+  {{#user}}
+  <h1>Welcome {{username}}!</h1>
+  <a href="logout">logout</a>
+  {{/user}}
+  <ul>
+  {{#events}}
+  <li>{{text}}</li>
+  {{/events}}
+  </ul>
+{{/authenticated}}
+</body>
+</html>

@@ -3,20 +3,27 @@
 var http = require('http')
   , path = require('path')
   , fs   = require('fs')
-  , config = require('./config')
-  , parser = require('./parser')
   , async  = require('async')
-  , colors = require('colors');
+  , colors = require('colors')
+  , config = require('./config')
+  , webui  = require('./webui');
 
 
 function ScheduleDigestor() {
   var self = this;
   self.configure = config;
   self.outputs = {};
-
+  self.events = [];
+  self.webui = new webui(this);
+  self.initDone = false;
+  
   self.init(function initialized(e, data) {
     if (e) { console.error(e.stack); }
-    else   { self.startBroadCast();  }
+    else {
+      self.events = data;
+      self.initDone = true;
+      self.startBroadCast();
+    }
   });
 }
 
@@ -66,6 +73,12 @@ ScheduleDigestor.prototype.init = function (cb) {
     });
   }
   
+  // Parser for the input data
+  function parser (cb) {
+    var input = self.configure.input;
+    require('./in/' + input.parser).call(self, input.config, cb);
+  }
+  
   // Time to use these functions above
   console.log('Parsing calendar data and initializing output modules...');
   async.parallel([parser, initializeModules],
@@ -77,7 +90,7 @@ ScheduleDigestor.prototype.init = function (cb) {
 
 
 ScheduleDigestor.prototype.startBroadCast = function () {
-  console.log('Starting to broadcast.');
+  console.log('Starting broadcast.');
 };
 
 
