@@ -96,6 +96,7 @@ details {
   border-radius: 8px;
 }
 details summary {
+  display: block;
   outline: none;
   cursor: pointer;
   padding: 2px 5px;

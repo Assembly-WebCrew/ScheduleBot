@@ -7,15 +7,24 @@ h1 {
   margin: 0.2em;
 }
 
+#login {
+  font-size: 1.5em;
+}
+#login input {
+  font-size: 1.2em;
+}
+
 nav {
   border-radius: 4px;
 }
-#manual input[type=submit] {
+
+#outputs input[type=submit] {
   width: 100px;
   height: 50px;
 }
-#manual input[type=text] {
+#outputs input[type=text] {
   width: 98%;
+  height: 40px;
 }
 
 .hide {
