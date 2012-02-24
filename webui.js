@@ -1,7 +1,10 @@
+'use strict';
+
 var colors   = require('colors')
   , express  = require('express')
   , mustache = require('mustache')
   , passport = require('passport')
+  , moment   = require('moment')
   , LocalStrategy = require('passport-local').Strategy
   // Read configure
   , config = require('./config').webui;
@@ -12,10 +15,8 @@ var tmpl = {
       return function(options) {
         options.locals = options.locals || {};
         options.partials = options.partials || {};
-        if (options.body) // for express.js > v1.0
-          locals.body = options.body;
-        return mustache.to_html(
-          source, options.locals, options.partials);
+        if (options.body) { locals.body = options.body; }
+        return mustache.to_html(source, options.locals, options.partials);
       };
     } else {
       return source;
@@ -46,6 +47,18 @@ function findByUsername(username, fn) {
   return fn(null, null);
 }
 
+function timeDiff(earlierDate, laterDate) {
+  var nTotalDiff = laterDate.getTime() - earlierDate.getTime()
+    , oDiff = {};
+  oDiff.days = Math.floor(nTotalDiff / 1000 / 60 / 60 / 24);
+  nTotalDiff -= oDiff.days * 1000 * 60 * 60 * 24;
+  oDiff.hours = Math.floor(nTotalDiff / 1000 / 60 / 60);
+  nTotalDiff -= oDiff.hours * 1000 * 60 * 60;
+  oDiff.minutes = Math.floor(nTotalDiff / 1000 / 60);
+  nTotalDiff -= oDiff.minutes * 1000 * 60;
+  oDiff.seconds = Math.floor(nTotalDiff / 1000);
+  return oDiff;
+}
 
 // WebUI Class
 //////////////
@@ -114,23 +127,53 @@ WebUI.prototype.initExpress = function () {
     res.redirect(config.base);
   });
 
+  app.post('/broadcast', ensureAuthenticated, function (req, res) {
+    self.bot.broadcastString(req.body.msg);
+    res.redirect(config.base);
+  });
+  
   app.listen(config.port);
 };
 
 
 WebUI.prototype.index = function (req, res) {
   var self = this;
+
+  function output(name) {
+    var o = self.bot.outputs[name];
+    return {
+      name: name,
+      ready: o.ready
+    };
+  }
+
+  function event(e) {
+    if (new Date(Date.now() + e.headstart) < e.sdate) {
+      var diff = timeDiff(new Date(Date.now() + e.headstart), e.sdate);
+    } else {
+      var diff = timeDiff(e.sdate, new Date(Date.now() + e.headstart));
+    }
+    e.fromNow = (diff.days    > 0 ? diff.days    + ' days '   : '')
+              + (diff.hours   > 0 ? diff.hours   + ' hours '  : '')
+              + (diff.minutes > 0 ? diff.minutes + ' minutes' : '');
+    return e;
+  }
+
   if (req.isAuthenticated()) {
     res.render("main.template", {
       locals: {
         authenticated: req.isAuthenticated(),
         user: req.user,
-        events: self.bot.events
+        events: self.bot.events.map(event),
+        outs: Object.keys(self.bot.outputs).map(output)
       }
     });
   } else { res.render("main.template"); }
-
 };
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+}
 
 module.exports = WebUI;

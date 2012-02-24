@@ -1,4 +1,138 @@
 body {
   margin: 30px auto;
-  width: 800px;
+  font-family: sans-serif;
+  background-color: #444;
 }
+h1 {
+  color: white;
+  text-align: center;
+}
+nav {
+  padding: 2px 6px 2px 3px;
+  background-color: #666;
+  color: #333;
+}
+nav a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #AFF;
+}
+#login form {
+  color: #333;
+  text-align: center;
+  background-color: #666;
+  border-radius: 1em;
+  display: block;
+  padding: 5px;
+  font-weight: bold;
+}
+form input {
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #AAA;
+  font-weight: bold;
+}
+
+#outputs {
+  color: #AAA;
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 3px 6px;
+  background-color: #666;
+  overflow: hidden;
+}
+
+.output {
+  display: block;
+  float: left;
+  margin: 2px 4px;
+  padding: 2px 4px;
+  background-color: #555;
+  border-radius: 4px;
+}
+
+#outputs .status {
+  vertical-align: -1px;
+  color: #F00;
+  font-size: 18px;
+  cursor: help;
+}
+
+#outputs .status.ready {
+  color: #0F0;
+}
+
+#outputs input[type=text] {
+  display: block;
+  width: 99%;
+  margin: 4px 0;
+  background-color: #FFF;
+}
+#outputs input[type=submit] {
+  float: right;
+}
+
+
+#events {
+  margin-top: 20px;
+}
+
+/* Not supporting browsers */
+.no-details details summary { clear: both; }
+.no-details details summary::before { /*font-size: 80%; float: left; width: 20px;*/ content: '▶'; }
+.no-details details.open summary::before { content: '▼'; }
+
+details {
+  display: block;
+  margin: 3px 0;
+  background-color: #777;
+  border-radius: 8px;
+}
+details summary {
+  outline: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 8px;
+}
+summary:hover, details[open] summary  {
+  background-color: #999;
+}
+details summary span{
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+details summary time {
+  color: #222;
+  font-style: italic;
+  font-size: 0.9em;
+}
+details summary .status {
+  float: right;
+  padding: 1px 2px;
+  font-weight: normal;
+  font-style: italic;
+}
+details.sent {
+  opacity: 0.4;
+}
+
+details ul {
+  margin: 0 20px;
+  padding: 3px;
+  font-family: monospace;
+}
+details ul pre {
+  margin: 0;
+}
+details a {
+  color: #444;
+}
+

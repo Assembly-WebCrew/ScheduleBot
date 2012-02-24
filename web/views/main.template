@@ -1,29 +1,62 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>ScheduleBot Control Panel</title>
+<link rel="stylesheet" media="all" type="text/css" href="assets/main.css" />
+<link rel="stylesheet" media="screen and (min-width: 1000px)" type="text/css" href="assets/big.css" />
+<link rel="stylesheet" media="screen and (max-width: 999px)"  type="text/css" href="assets/lil.css" />
 </head>
 <body>
 {{^authenticated}}
-  <h1>You need to log in.</h1>
-  <form method="post" action="./login">
-    <label>User: <input type="text"     size="10" maxlength="40" name="username" /></label><br />
-    <label>Pass: <input type="password" size="10" name="password" /></label>
-    <input type="submit" value="Login" />
-  </form>
+
+  <h1>You need to log in</h1>
+  <section id="login">
+    <form method="post" action="login">
+      <label>User: <input type="text"     size="10" maxlength="40" name="username" /></label>
+      <label>Pass: <input type="password" size="10" name="password" /></label>
+      <input type="submit" value="Go" />
+    </form>
+  </section>
+
 {{/authenticated}}
 {{#authenticated}}
-  {{#user}}
-  <h1>Welcome {{username}}!</h1>
-  <a href="logout">logout</a>
-  {{/user}}
-  <ul>
+  <h1><span class="hide">Schedulebot </span>Control Panel</h1>
+  <nav>{{#user}}Welcome <i>{{username}}</i>! &ndash; 
+    {{/user}}
+    <a href="logout">logout</a>
+  </nav>
+  
+  <section id="outputs">
+    <form method="post" action="broadcast">
+    <input type="text" placeholder="Broadcast..." name="msg" />
+    <input type="submit" value="Send" />
+    </form>
+    {{#outs}}<span class="output">{{name}}
+    {{#ready}}<span class="status ready" title="status: ready">&bull;</span>{{/ready}}
+    {{^ready}}<span class="status" title="status: not ready">&bull;</span>{{/ready}}</span>{{/outs}}
+  </section>
+  
+  <section id="events">
   {{#events}}
-  <li>{{text}}</li>
+  <details class="{{#done}}sent{{/done}}">
+      <summary><span>{{text}}</span> <time datetime="{{sdate}}">{{fromNow}}</time></summary>
+      
+      <ul class="content">
+        <li><pre><b>time:   </b>{{sdate}}</pre></li>
+        <li><pre><b>place:  </b>{{place}}</pre></li>
+        <li><pre><b>href:   </b><a href="{{href}}">{{href}}</a>{{^href}}N/A{{/href}}</pre></li>
+        <li><pre><b>type:   </b>{{type}}</pre></li>
+        <li><pre><b>length: </b><time datetime="{{edate}}"></time></pre></li>
+      </ul>
+      
+    </details>
   {{/events}}
-  </ul>
+  </section>
+
+<script src="assets/libs.js"></script>
+<script src="assets/main.js"></script>
 {{/authenticated}}
 </body>
 </html>

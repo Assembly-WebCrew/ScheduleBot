@@ -1,0 +1,9 @@
+body {
+  width: 800px;
+}
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border-bottom-right-radius: 6px;
+}

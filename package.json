@@ -28,7 +28,9 @@
     "mustache": "0.3.x",
     "express": "2.5.8",
     "passport": "0.1.6",
-    "passport-local": "0.1.0"
+    "passport-local": "0.1.0",
+    "moment": "1.4.0",
+    "hogan.js": "1.0.x"
   },
   "preferGlobal": true,
   "license": "MIT",

@@ -1,0 +1,23 @@
+body {
+  width: 95%;
+  margin: 10px auto;
+}
+
+h1 {
+  margin: 0.2em;
+}
+
+nav {
+  border-radius: 4px;
+}
+#manual input[type=submit] {
+  width: 100px;
+  height: 50px;
+}
+#manual input[type=text] {
+  width: 98%;
+}
+
+.hide {
+  display: none;
+}
