@@ -2,4 +2,4 @@
 Example output:
 "Sign-up for poker tournament" in 5 minutes at 12:00—16:00 — PMS http://www.assembly.org/summer11/compos/sponsored-unofficial/poker #Compo
 
-}}{{text}} in {{diff}} min ({{stime}}{{^nolen}}—{{etime}}{{/nolen}}) — {{place}} {{href}}#asmw12 #{{type}}
+}}{{text}} in {{diff}} min ({{stime}}{{^nolen}}—{{etime}}{{/nolen}}) — {{place}} {{href}}#asmw12 {{type}}

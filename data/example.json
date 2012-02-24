@@ -2,7 +2,7 @@
   "VCALENDAR": {
     "VEVENT": [
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12", 
         "SUMMARY": "ASSEMBLY Winter 2012 starts!", 
         "LOCATION": "All Areas", 
@@ -11,7 +11,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/come-to-party/entry-setup", 
         "SUMMARY": "Main entrance opened", 
         "LOCATION": "Main entrance", 
@@ -20,7 +20,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/come-to-party/entry-setup", 
         "SUMMARY": "Loading doors are opened", 
         "LOCATION": "Loading entrance", 
@@ -29,7 +29,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/come-to-party/entry-setup", 
         "SUMMARY": "Loading doors close", 
         "LOCATION": "Loading entrance", 
@@ -38,7 +38,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/starcraft2", 
         "SUMMARY": "ASUS ROG StarCraft 2 - Groups A, B", 
         "LOCATION": "Pro game tournament area", 
@@ -47,7 +47,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/starcraft2", 
         "SUMMARY": "ASUS ROG StarCraft 2 - Playoffs", 
         "LOCATION": "Stage", 
@@ -56,7 +56,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/starcraft2", 
         "SUMMARY": "ASUS ROG StarCraft 2 - Quarter final", 
         "LOCATION": "Stage", 
@@ -65,7 +65,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/starcraft2", 
         "SUMMARY": "ASUS ROG StarCraft 2 - Semifinals", 
         "LOCATION": "Stage", 
@@ -74,7 +74,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/starcraft2", 
         "SUMMARY": "ASUS ROG StarCraft 2 - Bronze match", 
         "LOCATION": "Stage", 
@@ -83,7 +83,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/starcraft2", 
         "SUMMARY": "ASUS ROG StarCraft 2 - Final match", 
         "LOCATION": "Stage", 
@@ -92,7 +92,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/counter-strike-source", 
         "SUMMARY": "Steelseries Counter-Strike: Source - Segment A", 
         "LOCATION": "Pro game tournament area", 
@@ -101,7 +101,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/counter-strike-source", 
         "SUMMARY": "Steelseries Counter-Strike: Source - Segment B", 
         "LOCATION": "Pro game tournament area", 
@@ -110,7 +110,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/counter-strike-source", 
         "SUMMARY": "Steelseries Counter-Strike: Source - Semifinal A1-B2", 
         "LOCATION": "Pro game tournament area", 
@@ -119,7 +119,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/counter-strike-source", 
         "SUMMARY": "Steelseries Counter-Strike: Source - Semifinal A2-B1", 
         "LOCATION": "Pro game tournament area", 
@@ -128,7 +128,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/counter-strike-source", 
         "SUMMARY": "Steelseries Counter-Strike: Source - Final and Bronze match", 
         "LOCATION": "Pro game tournament area", 
@@ -137,7 +137,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/tekken-6", 
         "SUMMARY": "Tekken 6 Pro - Qualification", 
         "LOCATION": "Console game area", 
@@ -146,7 +146,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/esports/pro/tekken-6", 
         "SUMMARY": "Tekken 6 Pro - Final", 
         "LOCATION": "Console game area", 
@@ -155,7 +155,7 @@
         "CATEGORIES": "game_pro"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - League of Legends - Signup", 
         "LOCATION": "BYOC - own computer place", 
@@ -164,7 +164,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - League of Legends - Tournament", 
         "LOCATION": "BYOC - own computer place", 
@@ -173,7 +173,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - StarCraft 2 - Signup", 
         "LOCATION": "BYOC - own computer place", 
@@ -182,7 +182,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - StarCraft 2 - tournament", 
         "LOCATION": "BYOC - own computer place", 
@@ -191,7 +191,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - Super Street Fighter 4 - Signup", 
         "LOCATION": "Console game area", 
@@ -200,7 +200,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - Super Street Fighter 4 - Tournament", 
         "LOCATION": "Console game area", 
@@ -209,7 +209,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - Forza 4 - Signup", 
         "LOCATION": "Console game area", 
@@ -218,7 +218,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - Forza 4 - Tournament", 
         "LOCATION": "Console game area", 
@@ -227,7 +227,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - FIFA 12 - Signup", 
         "LOCATION": "Console game area", 
@@ -236,7 +236,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - FIFA 12 - Tournament", 
         "LOCATION": "Console game area", 
@@ -245,7 +245,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - NHL 12 - Signup", 
         "LOCATION": "Console game area", 
@@ -254,7 +254,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://tournaments.peliliiga.fi/", 
         "SUMMARY": "Hobbyist - NHL 12 - Tournament", 
         "LOCATION": "Console game area", 
@@ -263,7 +263,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/activities/guitarhero", 
         "SUMMARY": "Guitar Hero - qualifying", 
         "LOCATION": "Sponsor area", 
@@ -272,7 +272,7 @@
         "CATEGORIES": "game_social"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/activities/guitarhero", 
         "SUMMARY": "Guitar Hero - semifinal", 
         "LOCATION": "Sponsor area", 
@@ -281,7 +281,7 @@
         "CATEGORIES": "game_social"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/activities/guitarhero", 
         "SUMMARY": "Guitar Hero - final", 
         "LOCATION": "Stage", 
@@ -290,16 +290,16 @@
         "CATEGORIES": "game_social"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/activities/dance", 
         "SUMMARY": "Machine dance qualification", 
         "LOCATION": "Sponsor area", 
-        "DTEND": "20120225T000000", 
-        "DTSTART": "20120224T200000", 
+        "DTEND": "20120225T160000", 
+        "DTSTART": "20120225T120000", 
         "CATEGORIES": "game_social"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/activities/dance", 
         "SUMMARY": "Machine dance final", 
         "LOCATION": "Stage", 
@@ -308,16 +308,16 @@
         "CATEGORIES": "game_social"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "Opening ceremony", 
         "LOCATION": "Stage", 
-        "DTEND": "20120224T170000", 
-        "DTSTART": "20120224T163000", 
+        "DTEND": "20120224T223000", 
+        "DTSTART": "20120224T220000", 
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/compos/prizes", 
         "SUMMARY": "Prize ceremony - StarCraft 2, CS:Source, Tekken 6", 
         "LOCATION": "Stage", 
@@ -326,7 +326,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/compos/prizes", 
         "SUMMARY": "Prize ceremony - Hobbyist tournaments", 
         "LOCATION": "Stage", 
@@ -335,7 +335,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "Closing ceremony", 
         "LOCATION": "Stage", 
@@ -344,8 +344,8 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
-        "URL": "http://www.assembly.org/winter12/compos/poker", 
+        "DTSTAMP": "20120224T163940", 
+        "URL": "http://www.assembly.org/winter12/activities/poker", 
         "SUMMARY": "Poker tournament - sign up", 
         "LOCATION": "Sleeping hall", 
         "DTEND": "20120224T170000", 
@@ -353,8 +353,8 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
-        "URL": "http://www.assembly.org/winter12/compos/poker", 
+        "DTSTAMP": "20120224T163940", 
+        "URL": "http://www.assembly.org/winter12/activities/poker", 
         "SUMMARY": "Poker tournament", 
         "LOCATION": "Sleeping hall", 
         "DTEND": "20120225T000000", 
@@ -362,7 +362,7 @@
         "CATEGORIES": "game_amateur"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "Loading doors open", 
         "LOCATION": "Loading doors", 
@@ -371,7 +371,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "Lights go on", 
         "LOCATION": "All areas", 
@@ -380,7 +380,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "Party network goes down", 
         "LOCATION": "All areas", 
@@ -389,7 +389,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "Electricity is cut", 
         "LOCATION": "All areas", 
@@ -398,7 +398,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "http://www.assembly.org/winter12/come-to-party/leaving", 
         "SUMMARY": "Loading doors closed", 
         "LOCATION": "Loading entrance", 
@@ -407,7 +407,7 @@
         "CATEGORIES": "Event"
       }, 
       {
-        "DTSTAMP": "20120224T070446", 
+        "DTSTAMP": "20120224T163940", 
         "URL": "", 
         "SUMMARY": "ASSEMBLY Winter 2012 is over - see you at ASSEMBLY Summer!", 
         "LOCATION": "All areas", 

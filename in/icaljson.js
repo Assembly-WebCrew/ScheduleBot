@@ -57,7 +57,7 @@ function parseJSON(config, cb) {
     return {
         "sdate": parseDate(e.DTSTART)
       , "edate": parseDate(e.DTEND)
-      ,  "href": e.URL.length > 5 ? e.URL : undefined
+      ,  "href": e.URL.length > 5 ? e.URL : ''
       ,  "text": e.SUMMARY
       , "place": e.LOCATION
       ,  "type": _.camelize(e.CATEGORIES)

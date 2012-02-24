@@ -61,6 +61,7 @@ Twitter.prototype.format = function (e) {
   o.href = o.href + ' ';
   o.type = (o.type === 'Event' ? '' : o.type);
   o.type = o.type.replace('game', '').toLowerCase();
+  o.type = (o.type ? '#' + o.type : '');
 
   len = config.template_length  // "Empty" template length
       + config.short_url_length // How long will the url be?
