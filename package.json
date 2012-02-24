@@ -1,6 +1,6 @@
 {
   "name": "ScheduleBot",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "author": "Ville Lahdenvuo <tuhoojabotti@gmail.com> (http://tuhoojabotti.com)",
   "description": "A bot for broadcasting schedule information to many mediums.",
   "contributors": [
@@ -30,7 +30,8 @@
     "passport": "0.1.6",
     "passport-local": "0.1.0",
     "moment": "1.4.0",
-    "hogan.js": "1.0.x"
+    "hogan.js": "1.0.x",
+    "JSONStream": "0.2.0"
   },
   "preferGlobal": true,
   "license": "MIT",
