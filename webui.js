@@ -102,17 +102,17 @@ WebUI.prototype.initExpress = function () {
 
   app.get('/', function (req, res) { self.index(req, res); });
 
-  app.post('/login', passport.authenticate('local', { failureRedirect: '/' }),
-    function (req, res) { res.redirect(config.base); });
+  app.post('/login', passport.authenticate('local', { failureRedirect: 'home' }),
+    function (req, res) { res.redirect('home'); });
 
   app.get('/logout', function(req, res){
     req.logout();
-    res.redirect(config.base);
+    res.redirect('home');
   });
 
   app.post('/broadcast', ensureAuthenticated, function (req, res) {
     self.bot.broadcastString(req.body.msg);
-    res.redirect(config.base);
+    res.redirect('home');
   });
   
   app.listen(config.port);
@@ -139,7 +139,7 @@ WebUI.prototype.index = function (req, res) {
     e.fromNow = (diff.days    > 0 ? diff.days    + ' days '   : '')
               + (diff.hours   > 0 ? diff.hours   + ' hours '  : '')
               + (diff.minutes > 0 ? diff.minutes + ' minutes' : '');
-    e.fromNow = e.fromNow || 'now'
+    e.fromNow = e.fromNow || 'now';
     return e;
   }
 

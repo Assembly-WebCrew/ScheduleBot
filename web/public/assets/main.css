@@ -9,8 +9,7 @@ h1 {
 }
 nav {
   padding: 3px 7px 3px 4px;
-  background-color: #888;
-  color: #000;
+  color: #BBB;
 }
 nav a {
   color: #FFF;
@@ -136,15 +135,27 @@ details summary .status {
   font-style: italic;
 }
 details.sent {
-  opacity: 0.4;
+  color: #BBB;
+  background-color: #444;
   white-space: nowrap;
+}
+details[open].sent summary {
+  background-color: #333;
+}
+details.sent summary:hover {
+  background-color: #333;
+}
+details.sent summary time {
+  color: #888;
+}
+details.sent a {
+  color: #BBB;
 }
 
 details ul {
   margin: 0 20px;
   padding: 3px;
   font-family: monospace;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 details ul pre {

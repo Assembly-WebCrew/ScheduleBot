@@ -8,6 +8,14 @@ nav {
   border-bottom-right-radius: 6px;
 }
 
+h1 {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  margin: 2px 4px;
+  font-size: 1.4em;
+}
+
 details.sent {
   width: 49.6%;
   display: inline-block;
