@@ -2,31 +2,13 @@
 
 var colors   = require('colors')
   , express  = require('express')
-  , mustache = require('mustache')
   , passport = require('passport')
   , moment   = require('moment')
+  , hogan    = require('hogan.js')
+  , adapter  = require('./hogan-express.js')
   , LocalStrategy = require('passport-local').Strategy
   // Read configure
   , config = require('./config').webui;
-
-var tmpl = {
-  compile: function (source, options) {
-    if (typeof source == 'string') {
-      return function(options) {
-        options.locals = options.locals || {};
-        options.partials = options.partials || {};
-        if (options.body) { locals.body = options.body; }
-        return mustache.to_html(source, options.locals, options.partials);
-      };
-    } else {
-      return source;
-    }
-  },
-  render: function (template, options) {
-    template = this.compile(template, options);
-    return template(options);
-  }
-};
 
 function findById(id, fn) {
   var idx = id - 1;
@@ -96,9 +78,10 @@ WebUI.prototype.initExpress = function () {
 
   app.configure(function() {
     // Setup templating
-    app.set("views", __dirname + '/web/views');
+    app.set('view engine','hogan.js');
     app.set("view options", {layout: false});
-    app.register(".template", tmpl);
+    app.set("views", __dirname + '/web/views');
+    app.register(".html", adapter.init(hogan));
     app.use(express.errorHandler({
       dumpExceptions: true,
       showStack: true
@@ -160,7 +143,7 @@ WebUI.prototype.index = function (req, res) {
   }
 
   if (req.isAuthenticated()) {
-    res.render("main.template", {
+    res.render("main.html", {
       locals: {
         authenticated: req.isAuthenticated(),
         user: req.user,
@@ -168,7 +151,7 @@ WebUI.prototype.index = function (req, res) {
         outs: Object.keys(self.bot.outputs).map(output)
       }
     });
-  } else { res.render("main.template"); }
+  } else { res.render("main.html"); }
 };
 
 function ensureAuthenticated(req, res, next) {
