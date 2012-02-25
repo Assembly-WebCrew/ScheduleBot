@@ -20,3 +20,7 @@ details.sent {
   width: 49.6%;
   display: inline-block;
 }
+
+#outputs {
+margin-top: 35px;
+}
