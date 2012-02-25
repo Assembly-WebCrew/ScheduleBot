@@ -1,16 +1,16 @@
 body {
-  margin: 30px auto;
+  margin: 20px auto;
   font-family: sans-serif;
-  background-color: #444;
+  background-color: #222;
 }
 h1 {
   color: white;
   text-align: center;
 }
 nav {
-  padding: 2px 6px 2px 3px;
-  background-color: #666;
-  color: #333;
+  padding: 3px 7px 3px 4px;
+  background-color: #888;
+  color: #000;
 }
 nav a {
   color: #FFF;
@@ -20,16 +20,21 @@ nav a {
 nav a:hover {
   color: #AFF;
 }
+
+#login {
+  text-align: center;
+}
+
 #login form {
   color: #333;
   text-align: center;
-  background-color: #666;
+  background-color: #888;
   border-radius: 1em;
-  display: block;
-  padding: 5px;
+  display: inline-block;
+  padding: 10px;
   font-weight: bold;
 }
-form input {
+input {
   font-size: 14px;
   padding: 4px;
   border-radius: 6px;
@@ -38,14 +43,21 @@ form input {
   background-color: #AAA;
   font-weight: bold;
 }
+input[type=submit] {
+  background-color: #444;
+  color: #FFF;
+}
+input[type=submit]:hover {
+  background-color: #555;
+}
 
 #outputs {
-  color: #AAA;
+  color: #FFF;
   margin-top: 20px;
   font-weight: bold;
   border-radius: 6px;
   padding: 3px 6px;
-  background-color: #666;
+  background-color: #888;
   overflow: hidden;
 }
 
@@ -54,7 +66,7 @@ form input {
   float: left;
   margin: 2px 4px;
   padding: 2px 4px;
-  background-color: #555;
+  background-color: #444;
   border-radius: 4px;
 }
 
@@ -79,20 +91,19 @@ form input {
   float: right;
 }
 
-
 #events {
   margin-top: 20px;
 }
 
 /* Not supporting browsers */
 .no-details details summary { clear: both; }
-.no-details details summary::before { /*font-size: 80%; float: left; width: 20px;*/ content: '▶'; }
+.no-details details summary::before { content: '▶'; }
 .no-details details.open summary::before { content: '▼'; }
 
 details {
   display: block;
   margin: 3px 0;
-  background-color: #777;
+  background-color: #888;
   border-radius: 8px;
 }
 details summary {
@@ -101,6 +112,9 @@ details summary {
   cursor: pointer;
   padding: 2px 5px;
   border-radius: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 summary:hover, details[open] summary  {
   background-color: #999;
@@ -123,12 +137,15 @@ details summary .status {
 }
 details.sent {
   opacity: 0.4;
+  white-space: nowrap;
 }
 
 details ul {
   margin: 0 20px;
   padding: 3px;
   font-family: monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 details ul pre {
   margin: 0;

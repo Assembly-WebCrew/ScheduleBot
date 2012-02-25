@@ -5,7 +5,7 @@ var colors   = require('colors')
   , passport = require('passport')
   , moment   = require('moment')
   , hogan    = require('hogan.js')
-  , adapter  = require('./hogan-express.js')
+  , adapter  = require('./hogan-express')
   , LocalStrategy = require('passport-local').Strategy
   // Read configure
   , config = require('./config').webui;
@@ -139,6 +139,7 @@ WebUI.prototype.index = function (req, res) {
     e.fromNow = (diff.days    > 0 ? diff.days    + ' days '   : '')
               + (diff.hours   > 0 ? diff.hours   + ' hours '  : '')
               + (diff.minutes > 0 ? diff.minutes + ' minutes' : '');
+    e.fromNow = e.fromNow || 'now'
     return e;
   }
 

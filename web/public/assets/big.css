@@ -1,9 +1,14 @@
 body {
-  width: 800px;
+  width: 1000px;
 }
 nav {
   position: fixed;
   top: 0px;
   left: 0px;
   border-bottom-right-radius: 6px;
+}
+
+details.sent {
+  width: 49.6%;
+  display: inline-block;
 }

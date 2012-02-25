@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>ScheduleBot Control Panel</title>
 <link rel="stylesheet" media="all" type="text/css" href="assets/main.css" />
-<link rel="stylesheet" media="screen and (min-width: 1000px)" type="text/css" href="assets/big.css" />
-<link rel="stylesheet" media="screen and (max-width: 999px)"  type="text/css" href="assets/lil.css" />
+<link rel="stylesheet" media="screen and (min-width: 1024px)" type="text/css" href="assets/big.css" />
+<link rel="stylesheet" media="screen and (max-width: 1023px)"  type="text/css" href="assets/lil.css" />
 </head>
 <body>
 {{^authenticated}}
@@ -23,7 +23,7 @@
 {{/authenticated}}
 {{#authenticated}}
   <h1><span class="hide">Schedulebot </span>Control Panel</h1>
-  <nav>{{#user}}Welcome <i>{{username}}</i>! &ndash; 
+  <nav>{{#user}}Welcome {{username}}! &ndash; 
     {{/user}}
     <a href="logout">logout</a>
   </nav>

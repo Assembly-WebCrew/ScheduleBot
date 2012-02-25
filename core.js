@@ -115,7 +115,7 @@ ScheduleDigestor.prototype.broadcast = function (event) {
   function send(o, cb) {
     o = self.outputs[o];
     if (o.ready) {
-      o.send(event, cb);
+      o.send(clone(event), cb);
     } else {
       // Skip it
       cb(null);
@@ -145,6 +145,13 @@ ScheduleDigestor.prototype.broadcastString = function (msg) {
     if (err) { console.error(err.stack); }
   });
 };
+
+
+function clone(o){
+  return Object.getOwnPropertyNames(o).reduce(function(r,s){
+    return Object.defineProperty(r, s, Object.getOwnPropertyDescriptor(o, s));
+  }, Object.create(Object.getPrototypeOf(o)));
+}
 
 // Create a new bot
 var bot = new ScheduleDigestor();

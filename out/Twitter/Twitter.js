@@ -55,18 +55,16 @@ Twitter.prototype.init = function (cb) {
   });
 }*/
 
-Twitter.prototype.format = function (e) {
-  var o = e, len;
-
-  o.href = o.href + ' ';
-  o.type = (o.type === 'Event' ? '' : o.type);
+Twitter.prototype.format = function (o) {
+  o.href = o.href ? o.href + ' ' : '';
+  o.type = o.type === 'Event' ? '' : o.type;
   o.type = o.type.replace('game', '').toLowerCase();
-  o.type = (o.type ? '#' + o.type : '');
+  o.type = o.type ? '#' + o.type : '';
 
-  len = config.template_length  // "Empty" template length
-      + config.short_url_length // How long will the url be?
-      + o.place.length          // Length of the place for example "PMS" or "Main stage"
-      + o.type.length;          // Length of the type for example "Event" or "CompoGame"
+  var len = config.template_length          // "Empty" template length
+    + o.href ? config.short_url_length : 0  // How long will the url be?
+    + o.place.length                        // Length of the place for example "PMS" or "Main stage"
+    + o.type.length;                        // Length of the type for example "Event" or "CompoGame"
 
   // Shorten the text part if tweet is going to be too long.
   o.text = _(o.text).prune(140 - len);
